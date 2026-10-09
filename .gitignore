@@ -1,0 +1,37 @@
+﻿# IDE
+.vscode
+.pycharm
+.idea
+
+# Python
+__pycache__
+*.pyc
+.ipynb_checkpoints
+
+# ML model weights (too large for git - use S3 or Git LFS)
+model/
+*.h5
+*.tflite
+saved_models/
+
+# Frontend build artifacts
+frontend/node_modules/
+frontend/build/
+
+# Environment secrets
+.env
+*.env.local
+
+# Legacy / misc
+models.config
+PlantVillage/
+.gcloudignore
+
+# Terraform
+infrastructure/terraform/.terraform/
+infrastructure/terraform/terraform.tfstate
+infrastructure/terraform/terraform.tfstate.backup
+infrastructure/terraform/*.tfvars
+
+# SSH Keys
+*.pem

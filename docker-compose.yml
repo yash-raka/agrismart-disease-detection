@@ -1,0 +1,21 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./model:/app/model
+      - ~/.aws:/root/.aws:ro
+    environment:
+      - MODEL_PATH=/app/model/potatoes.h5
+      - AWS_REGION=ap-south-1
+      - BEDROCK_MODEL_ID=amazon.titan-text-express-v1
+      - S3_BUCKET=potato-disease-images-20261009133630246500000001
+      - DYNAMODB_TABLE=PotatoPredictions
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3001:80"
